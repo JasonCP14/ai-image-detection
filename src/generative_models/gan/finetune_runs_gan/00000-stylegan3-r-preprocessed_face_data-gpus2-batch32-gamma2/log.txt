@@ -1,0 +1,129 @@
+Loading training set...
+/usr/local/lib/python3.10/dist-packages/torch/utils/data/sampler.py:76: UserWarning: `data_source` argument is not used and will be removed in 2.2.0.You may still have custom implementation that utilizes it.
+  warnings.warn(
+/usr/local/lib/python3.10/dist-packages/torch/utils/data/sampler.py:76: UserWarning: `data_source` argument is not used and will be removed in 2.2.0.You may still have custom implementation that utilizes it.
+  warnings.warn(
+
+Num images:  8752
+Image shape: [3, 256, 256]
+Label shape: [0]
+
+Constructing networks...
+Resuming from "pretrained_weights/stylegan3-pretrained.pkl"
+Setting up PyTorch plugin "bias_act_plugin"... /usr/local/lib/python3.10/dist-packages/torch/utils/cpp_extension.py:1964: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'].
+  warnings.warn(
+Done.
+Setting up PyTorch plugin "filtered_lrelu_plugin"... /usr/local/lib/python3.10/dist-packages/torch/utils/cpp_extension.py:1964: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'].
+  warnings.warn(
+Done.
+
+Generator                     Parameters  Buffers  Output shape        Datatype
+---                           ---         ---      ---                 ---     
+mapping.fc0                   262656      -        [8, 512]            float32 
+mapping.fc1                   262656      -        [8, 512]            float32 
+mapping                       -           512      [8, 16, 512]        float32 
+synthesis.input.affine        2052        -        [8, 4]              float32 
+synthesis.input               1048576     3081     [8, 1024, 36, 36]   float32 
+synthesis.L0_36_1024.affine   525312      -        [8, 1024]           float32 
+synthesis.L0_36_1024          1049600     157      [8, 1024, 36, 36]   float32 
+synthesis.L1_36_1024.affine   525312      -        [8, 1024]           float32 
+synthesis.L1_36_1024          1049600     157      [8, 1024, 36, 36]   float32 
+synthesis.L2_36_1024.affine   525312      -        [8, 1024]           float32 
+synthesis.L2_36_1024          1049600     157      [8, 1024, 36, 36]   float32 
+synthesis.L3_52_1024.affine   525312      -        [8, 1024]           float32 
+synthesis.L3_52_1024          1049600     169      [8, 1024, 52, 52]   float16 
+synthesis.L4_52_1024.affine   525312      -        [8, 1024]           float32 
+synthesis.L4_52_1024          1049600     157      [8, 1024, 52, 52]   float16 
+synthesis.L5_84_1024.affine   525312      -        [8, 1024]           float32 
+synthesis.L5_84_1024          1049600     169      [8, 1024, 84, 84]   float16 
+synthesis.L6_84_1024.affine   525312      -        [8, 1024]           float32 
+synthesis.L6_84_1024          1049600     157      [8, 1024, 84, 84]   float16 
+synthesis.L7_148_724.affine   525312      -        [8, 1024]           float32 
+synthesis.L7_148_724          742100      169      [8, 724, 148, 148]  float16 
+synthesis.L8_148_512.affine   371412      -        [8, 724]            float32 
+synthesis.L8_148_512          371200      157      [8, 512, 148, 148]  float16 
+synthesis.L9_148_362.affine   262656      -        [8, 512]            float32 
+synthesis.L9_148_362          185706      157      [8, 362, 148, 148]  float16 
+synthesis.L10_276_256.affine  185706      -        [8, 362]            float32 
+synthesis.L10_276_256         92928       169      [8, 256, 276, 276]  float16 
+synthesis.L11_276_181.affine  131328      -        [8, 256]            float32 
+synthesis.L11_276_181         46517       157      [8, 181, 276, 276]  float16 
+synthesis.L12_276_128.affine  92853       -        [8, 181]            float32 
+synthesis.L12_276_128         23296       25       [8, 128, 276, 276]  float16 
+synthesis.L13_256_128.affine  65664       -        [8, 128]            float32 
+synthesis.L13_256_128         16512       25       [8, 128, 256, 256]  float16 
+synthesis.L14_256_3.affine    65664       -        [8, 128]            float32 
+synthesis.L14_256_3           387         1        [8, 3, 256, 256]    float16 
+synthesis                     -           -        [8, 3, 256, 256]    float32 
+---                           ---         ---      ---                 ---     
+Total                         15779565    5576     -                   -       
+
+Setting up PyTorch plugin "upfirdn2d_plugin"... /usr/local/lib/python3.10/dist-packages/torch/utils/cpp_extension.py:1964: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'].
+  warnings.warn(
+Done.
+
+Discriminator  Parameters  Buffers  Output shape        Datatype
+---            ---         ---      ---                 ---     
+b256.fromrgb   -           272      [8, 64, 256, 256]   float16 
+b256.skip      -           8208     [8, 128, 128, 128]  float16 
+b256.conv0     -           36944    [8, 64, 256, 256]   float16 
+b256.conv1     -           73872    [8, 128, 128, 128]  float16 
+b256           -           16       [8, 128, 128, 128]  float16 
+b128.skip      -           32784    [8, 256, 64, 64]    float16 
+b128.conv0     -           147600   [8, 128, 128, 128]  float16 
+b128.conv1     -           295184   [8, 256, 64, 64]    float16 
+b128           -           16       [8, 256, 64, 64]    float16 
+b64.skip       -           131088   [8, 512, 32, 32]    float16 
+b64.conv0      -           590096   [8, 256, 64, 64]    float16 
+b64.conv1      -           1180176  [8, 512, 32, 32]    float16 
+b64            -           16       [8, 512, 32, 32]    float16 
+b32.skip       262144      16       [8, 512, 16, 16]    float16 
+b32.conv0      2359808     16       [8, 512, 32, 32]    float16 
+b32.conv1      2359808     16       [8, 512, 16, 16]    float16 
+b32            -           16       [8, 512, 16, 16]    float16 
+b16.skip       262144      16       [8, 512, 8, 8]      float32 
+b16.conv0      2359808     16       [8, 512, 16, 16]    float32 
+b16.conv1      2359808     16       [8, 512, 8, 8]      float32 
+b16            -           16       [8, 512, 8, 8]      float32 
+b8.skip        262144      16       [8, 512, 4, 4]      float32 
+b8.conv0       2359808     16       [8, 512, 8, 8]      float32 
+b8.conv1       2359808     16       [8, 512, 4, 4]      float32 
+b8             -           16       [8, 512, 4, 4]      float32 
+b4.mbstd       -           -        [8, 513, 4, 4]      float32 
+b4.conv        2364416     16       [8, 512, 4, 4]      float32 
+b4.fc          4194816     -        [8, 512]            float32 
+b4.out         513         -        [8, 1]              float32 
+---            ---         ---      ---                 ---     
+Total          21505025    2496480  -                   -       
+
+Setting up augmentation...
+Distributing across 2 GPUs...
+Setting up training phases...
+Exporting sample images...
+/usr/local/lib/python3.10/dist-packages/torch/utils/cpp_extension.py:1964: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'].
+  warnings.warn(
+/usr/local/lib/python3.10/dist-packages/torch/utils/cpp_extension.py:1964: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'].
+  warnings.warn(
+/usr/local/lib/python3.10/dist-packages/torch/utils/cpp_extension.py:1964: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'].
+  warnings.warn(
+Initializing logs...
+Training for 5 kimg...
+
+tick 0     kimg 0.0      time 1m 29s       sec/tick 23.8    sec/kimg 744.43  maintenance 65.2   cpumem 3.15   gpumem 12.61  reserved 12.79  augment 0.000
+Evaluating metrics...
+{"results": {"fid50k_full": 99.24814393738194}, "metric": "fid50k_full", "total_time": 1193.1944987773895, "total_time_str": "19m 53s", "num_gpus": 2, "snapshot_pkl": "network-snapshot-000000.pkl", "timestamp": 1744030753.4876556}
+tick 1     kimg 2.0      time 25m 34s      sec/tick 215.0   sec/kimg 106.67  maintenance 1229.9 cpumem 3.45   gpumem 4.66   reserved 6.17   augment 0.020
+tick 2     kimg 4.1      time 29m 09s      sec/tick 214.9   sec/kimg 106.62  maintenance 0.0    cpumem 3.45   gpumem 4.66   reserved 6.17   augment 0.040
+Evaluating metrics...
+{"results": {"fid50k_full": 87.99433051676937}, "metric": "fid50k_full", "total_time": 1191.7325162887573, "total_time_str": "19m 52s", "num_gpus": 2, "snapshot_pkl": "network-snapshot-000004.pkl", "timestamp": 1744032411.421137}
+tick 3     kimg 5.0      time 51m 20s      sec/tick 102.7   sec/kimg 106.97  maintenance 1227.9 cpumem 3.43   gpumem 4.65   reserved 6.17   augment 0.047
+Evaluating metrics...
+{"results": {"fid50k_full": 84.03416566226223}, "metric": "fid50k_full", "total_time": 1190.5771129131317, "total_time_str": "19m 51s", "num_gpus": 2, "snapshot_pkl": "network-snapshot-000005.pkl", "timestamp": 1744033740.3259954}
+
+Exiting...

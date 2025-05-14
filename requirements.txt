@@ -1,0 +1,11 @@
+torch
+torchvision
+Pillow
+matplotlib
+tqdm
+mediapipe
+opencv-python
+huggingface-hub
+pandas
+python-dotenv
+ninja
